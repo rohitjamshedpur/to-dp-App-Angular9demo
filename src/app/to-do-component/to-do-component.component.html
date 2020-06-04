@@ -1,0 +1,38 @@
+<div class="container" style="background: grey;">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mx-auto">
+            <img class="img-fluid" src="assets/45.JPG"  alt="Responsive image">
+       
+            <div class="jumbotron  jumbotron-fluid" >
+                <div class="container">
+                <h3 class="text-center">Reminders </h3>
+            
+
+            <div class="input-group">
+                <input type="text" class="form-control" #itemTittle>
+                <div class="input-group-addon hover-cursor" (click)="onAdd(itemTittle)">
+                    <i class="fa fa-plus-circle fa-2x"></i>
+                </div>
+            </div>
+
+            <div style="margin:5px 0px">
+                <ul class="list-group checkbox-list-group">
+                    <li class="list-group-item" *ngFor="let item of todolistArray">
+                        <span class="hover-cursor" [class.text-success]="item.isChecked"
+                            (click)="alterchceked(item.$key,item.isChecked)">
+                            <i class="fa fa-lg" [ngClass]="item.isChecked? ' fa-check-circle-o':'fa-circle-thin'"></i>
+
+                        </span>
+                        {{item.tittle}}
+                        <span class="hover-cursor text-danger pull-right" (click)="onDelete(item.$key)">
+                            <i class="fa fa-trash-o fa-lg"></i>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </div>
+   
+</div>
+</div>
+</div>
